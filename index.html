@@ -7,7 +7,27 @@
     <title>Чат</title>
   </head>
   <body class="app">
-    
+    <div class="chat-app">
+        <aside class="sidebar">
+            <div class="chat-list"></div>
+        </aside>
+        <main class="chat-container">
+            <header class="chat-header">
+                <div class="chat-user">
+                    <img src="https://i.pinimg.com/736x/5d/fc/2b/5dfc2b9d3dbd6eeff4fc4c83e2e3e11a.jpg" alt="User" class="avatar">
+                    <div>
+                        <div class="user-name">Aaron Watts</div>
+                        <div class="user-status">Interactive Art Director @ Degordian</div>
+                    </div>
+                </div>
+            </header>
+            <div class="chat-messages"></div>
+            <footer class="chat-footer">
+                <input type="text" class="message-input" placeholder="Type a message...">
+                <button class="send-button">▶</button>
+            </footer>
+        </main>
+    </div>
   </body>
   <script src="./src/main.js" type="module"></script>
 </html>
