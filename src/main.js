@@ -1,24 +1,27 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { createButton,createAvatar,createChatItem } from "./components/base.js";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector(".app");
+    const sendButton = createButton("Отправить", "btn-primary");
+    body.appendChild(sendButton);
 
-setupCounter(document.querySelector('#counter'))
+    const avatar = createAvatar("https://avatars.mds.yandex.net/i?id=4b53423f6003e6698a20bdc21a5c70ea_l-5322694-images-thumbs&n=13", "Профиль", 50);
+    body.prepend(avatar); 
+
+
+        const user1 = createChatItem({
+            avatarSrc: "avatar1.png",
+            name: "Алексей",
+            message: "Привет! Как дела?"
+        });
+
+        const user2 = createChatItem({
+            avatarSrc: "avatar2.png",
+            name: "Мария",
+            message: "Когда встретимся?"
+        });
+
+        body.appendChild(user1)
+        body.appendChild(user2)
+
+});
